@@ -121,6 +121,7 @@ def imputation(df):
     return  df
 
 
+
 # Création de X, Y
 def preprocessing(df):
     df = imputation(df)
