@@ -139,7 +139,6 @@ X_train, y_train = preprocessing(df)
 
 X_test, y_test = preprocessing(ypred)
 
-
 predictions = rf.predict(X_test)
 predictions
 

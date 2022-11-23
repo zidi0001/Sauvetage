@@ -11,8 +11,7 @@ df=data
 df = df.drop(1, axis=0)
 #Stocker la données sur le CSV
 
-predi = pd.read_excel("C:/Users/win/Documents/M2 SEP/S1/Cousin/Test_Formulaire_Final_Automate.xlsm", decimal=",")
-
+predi = pd.read_excel("C:/Users/win/Documents/M2 SEP/S1/Cousin/Pre_Pycharm/Test_Formulaire_Final_Automate.xlsm", decimal=",")
 
 ypred = predi
 
