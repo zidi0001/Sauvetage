@@ -15,8 +15,6 @@
 
 Vous devez remplacer les 2 lignes suivantes avec le chemin de l'éxecuteur de votre Python et le chemin de votre script Python.
 
-PythonExePath = """C:\Users\win\Documents\M2 SEP\S1\Cousin\Pre_Pycharm\venv\Scripts\python.exe"""
-PythonScriptPath = """C:\Users\win\Documents\M2 SEP\S1\Cousin\Pre_Pycharm\ensemble.py"""
-
+![image](https://user-images.githubusercontent.com/116751113/204827401-fbfef1de-9467-4ca3-8e4a-ca8324224f9a.png)
 
 Vous pouvez, normalement, utiliser notre application :)
