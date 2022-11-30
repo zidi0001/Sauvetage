@@ -1,4 +1,14 @@
-# Sauvetage
+# Sauvetamer
+  Nous rappelons que ce projet est un projet universitaire. Nous vous informons qu'il peut exister des erreurs dans les ressources suivantes du projet GitHub.
+  
+  L'objectif de ce projet est de pouvoir créer une application digitalisée en simulant un environnement de travail AGILE.
+  
+  L'application "Sauvetage" permet à des usagers marins de prédire leur probabilité de décès en cas d'accident lors de leur sortie marine. 
+  
+# L'origine des données 
+
+https://www.data.gouv.fr/fr/datasets/operations-coordonnees-par-les-cross/
+
 
 
 # Configuration de l'application
