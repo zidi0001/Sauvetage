@@ -1,5 +1,5 @@
 # Sauvetamer
-  Nous rappelons que ce projet est un projet universitaire. Nous vous informons qu'il peut exister des erreurs dans les ressources suivantes du projet GitHub.
+  Nous vous rappelons que ce projet est un projet universitaire. Nous vous informons qu'il peut exister des erreurs dans les ressources suivantes du projet GitHub.
   
   L'objectif de ce projet est de pouvoir créer une application digitalisée en simulant un environnement de travail AGILE.
   
