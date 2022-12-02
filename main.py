@@ -1,21 +1,33 @@
+# Library 
+
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
+import tkinter
+from tkinter import *
 
 
-#Importation de la base de donnees
+
+
+################################################# Code #################################################
+## Importation de la base BDD_train
+
 data = pd.read_csv('ensemble_BDD_train.csv',sep = ";")
 data
 df=data
 
-
 df = df.drop(1, axis=0)
-#Stocker la données sur le CSV
-predi = pd.read_excel('Test_Formulaire_Final_Automate.xlsm', decimal=",")
+
+
+# On stocke la données sur le fichier Excel 
+
+predi = pd.read_excel("C:/Users/win/Documents/M2 SEP/S1/Cousin/Pre_Pycharm/Test_Formulaire_Final_Automate.xlsm", decimal=",")
+
 ypred = predi
 
 
+### On recode les variables qualitatives en numérique grace a la fonction encodage 
 
-# Recodage des quali
+
 def encodage(df):
     code = {"Alpes-Maritimes": 0,
             "Aude": 1,
@@ -93,7 +105,6 @@ def encodage(df):
             "Dunkerque": 10,
             "Etretat": 11,
             "Fecamp": 12,
-            "Granville": 13,
             "La Rochelle-Pallice": 14,
             "Le Havre": 15,
             "Le Touquet": 16,
@@ -119,17 +130,18 @@ def encodage(df):
     return df
 
 
+#On supprime les NA avec la fonction imputation 
 
 
-#Drop des lignes NA's
 def imputation(df):
     #df['is na'] = (df['Parainfluenza 3'].isna()) | (df['Leukocytes'].isna())
     #df = df.fillna(-999)
     df = df.dropna(axis=0)
     return  df
 
+# On sépare notre dataframe en deux, les features(X) et la variable à prédire de l'autre ( Y ). 
 
-# Création de X, Y
+
 def preprocessing(df):
     df = imputation(df)
     df = encodage(df)
@@ -139,11 +151,13 @@ def preprocessing(df):
 
     return X, y
 
-
+####### Création de notre base d'entrainement et notre base test ######## 
 
 X_train, y_train = preprocessing(df)
 
 X_test, y_test = preprocessing(ypred)
+
+####### Création du modèle random Forest appliqué à notre base d'entrainement #######
 
 #On créé un Random Forest de 100 arbres
 rf = RandomForestClassifier(n_estimators = 100, random_state = 0)
@@ -151,55 +165,49 @@ rf = RandomForestClassifier(n_estimators = 100, random_state = 0)
 rf.fit(X_train, y_train)
 
 
+####### Précision du modèle ########
+
 predictions = rf.predict(X_test)
 predictions
 
 proba = rf.predict_proba(X_test)
 proba = proba[0,1]*100
 
-
-
-
-
-
-
-import tkinter
-from tkinter import *
-
-
+####### On lance l'application via notre terminal 
 
 proba = proba
 predit = predictions
+
+# Les différentes instructions en fonction des sorties de notre algorithme 
+## Si la prédiction = 1 alors vous avez des risques de décéder 
+## Si la prédiction est différente de 1 vous avez des chances d'être secourus. 
 
 if predit==1:
     commentaire = "vous avez un risque de décéder"
 else:
     commentaire = "vous avez des chances d'être secouru"
 
+# Paramètre d'affichage de la fenêtre  
 
-
-#SCREEN
 tuto = tkinter.Tk()
 tuto.geometry("700x250")
 tuto.title("Chance de survie")
 
 x=95
-#Label
+
+# Les message affichés sur notre fenêtre et leur différentes positions 
+
 l3 = Label(text="Notre application estime votre probabilité de décès à : ", font="Arial")
 l3.place(x=10,y=100)
 
 l3 = Label(text= str(proba) + " %", font="Arial")
 l3.place(x=400,y=100)
 
-
-
-
 l1 = Label(text=" En cas de problèmes, selon notre application :", font="Arial")
 l1.place(x=10,y=50)
 
 l2 = Label(text=commentaire, font="Arial")
 l2.place(x=400,y=50)
-
 
 #lOOP
 tuto.mainloop()
