@@ -162,9 +162,10 @@ X_test, y_test = preprocessing(ypred)
 ####### Création du modèle random Forest appliqué à notre base d'entrainement #######
 
 #On créé un Random Forest de 100 arbres
-rf = RandomForestClassifier(n_estimators = 100, random_state = 0)
+rf = RandomForestClassifier(n_estimators = 50, max_depth=9 ,min_samples_split=6 , criterion= 'gini')
 #Et on lance le training sur notre dataset de train
 rf.fit(X_train, y_train)
+
 
 
 ####### Précision du modèle ########
