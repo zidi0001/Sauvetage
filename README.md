@@ -25,6 +25,6 @@ https://www.data.gouv.fr/fr/datasets/operations-coordonnees-par-les-cross/
 
 Vous devez remplacer les 2 lignes suivantes avec le chemin de l'exécuteur de votre Python et le chemin de votre script Python.
 
-![image](https://user-images.githubusercontent.com/116751113/204827401-fbfef1de-9467-4ca3-8e4a-ca8324224f9a.png)
+![image](https://user-images.githubusercontent.com/116751113/205380885-b34c7ea8-adfd-48e2-b9e1-f1bac485b6ee.png)
 
 Vous pouvez, normalement, utiliser notre application :)
