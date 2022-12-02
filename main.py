@@ -18,9 +18,10 @@ df=data
 df = df.drop(1, axis=0)
 
 
-# On stocke la données sur le fichier Excel 
+# On stocke la données sur le fichier Excel
 
-predi = pd.read_excel("C:/Users/win/Documents/M2 SEP/S1/Cousin/Pre_Pycharm/Test_Formulaire_Final_Automate.xlsm", decimal=",")
+#Si problème, mettre le chemin exact du formulaire VBA
+predi = pd.read_excel("Formulaire_Final_Automate.xlsm", decimal=",")
 
 ypred = predi
 
@@ -105,6 +106,7 @@ def encodage(df):
             "Dunkerque": 10,
             "Etretat": 11,
             "Fecamp": 12,
+            "Granville": 13,
             "La Rochelle-Pallice": 14,
             "Le Havre": 15,
             "Le Touquet": 16,
